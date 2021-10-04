@@ -18,10 +18,11 @@
     <decision id="node_1" name="AssessRisk">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="RiskLevel" collection="false" name="Assess relationship"/>
-                <input bomType="RiskLevel" collection="false" name="Assess loan amount"/>
+                <input bomType="RiskLevel" collection="false" name="Assess bank relationship risk decision"/>
+                <input bomType="RiskLevel" collection="false" name="Assess loan amount risk decision"/>
                 <output bomType="Risk" collection="false" name="AssessRisk"/>
                 <rule defaultRule="false" href="node_1/Define%20combined%20risk.dmt" kind="DecisionTable" name="Define combined risk"/>
+                <rule defaultRule="true" href="node_1/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
         <variable id="node_1_ii" name="AssessRisk" typeRef="Risk"/>
@@ -32,28 +33,29 @@
             <requiredInput href="#node_3"/>
         </informationRequirement>
     </decision>
-    <decision id="node_2" name="Assess relationship">
+    <decision id="node_2" name="Assess bank relationship risk decision">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="LoanApplication" collection="false" name="the loan application"/>
-                <output bomType="RiskLevel" collection="false" name="Assess relationship"/>
+                <output bomType="RiskLevel" collection="false" name="Assess bank relationship risk decision"/>
                 <rule defaultRule="false" href="node_2/assess%20years%20in%20bank%20risk.dmt" kind="DecisionTable" name="assess years in bank risk"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_2_ii" name="Assess relationship" typeRef="RiskLevel"/>
+        <variable id="node_2_ii" name="Assess bank relationship risk decision" typeRef="RiskLevel"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
         </informationRequirement>
     </decision>
-    <decision id="node_3" name="Assess loan amount">
+    <decision id="node_3" name="Assess loan amount risk decision">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
                 <input bomType="LoanApplication" collection="false" name="the loan application"/>
-                <output bomType="RiskLevel" collection="false" name="Assess loan amount"/>
+                <output bomType="RiskLevel" collection="false" name="Assess loan amount risk decision"/>
                 <rule defaultRule="false" href="node_3/Assess%20LTV%20risk.dmt" kind="DecisionTable" name="Assess LTV risk"/>
+                <rule defaultRule="true" href="node_3/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_3_ii" name="Assess loan amount" typeRef="RiskLevel"/>
+        <variable id="node_3_ii" name="Assess loan amount risk decision" typeRef="RiskLevel"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
         </informationRequirement>

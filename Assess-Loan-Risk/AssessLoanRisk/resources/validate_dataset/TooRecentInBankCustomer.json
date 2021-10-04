@@ -1,0 +1,14 @@
+{
+  "theLoanApplication": {
+    "LTV": 0.5,
+    "primary borrower": {
+      "years at current address": 0,
+      "years employed": 0,
+      "years with current bank": 1
+    },
+    "loan amount": 160000,
+    "property value": 400000,
+    "installment percent": 1,
+    "loan purpose": ""
+  }
+}
