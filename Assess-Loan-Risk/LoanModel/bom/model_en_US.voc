@@ -1,0 +1,114 @@
+
+# Account
+Account#concept.label = account
+Account.Account(double,java.lang.String)#phrase.navigation = a new {account} where {0, balance} {1, type}
+Account.balance#phrase.action = set the balance of {this} to {balance}
+Account.balance#phrase.addition_setter = add {balance} to the balance of {this}
+Account.balance#phrase.navigation = {balance} of {this}
+Account.balance#phrase.subtraction_setter = subtract {balance} from the balance of {this}
+Account.type#phrase.action = set the type of {this} to {type}
+Account.type#phrase.navigation = {type} of {this}
+
+# Borrower
+Borrower#concept.label = Borrower
+Borrower.Borrower(java.util.List,java.lang.Long,boolean,double,java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Long,java.lang.Long,java.lang.Long,java.lang.Long)#phrase.navigation = a new {Borrower} where {0, account} {1, age} {2, citizen} {3, creditHistory} {4, dependents} {5, housing} {6, job role} {7, job type} {8, property ownership} {9, total amount across lines of credit} {10, years at current address} {11, years employed} {12, years with current bank}
+Borrower.accounts#phrase.action = set the accounts of {this} to {account}
+Borrower.accounts#phrase.navigation = {account} of {this}
+Borrower.addTo_accounts(Account)#phrase.action = add {0} to the accounts of {this}
+Borrower.age#phrase.action = set the age of {this} to {age}
+Borrower.age#phrase.addition_setter = add {age} to the age of {this}
+Borrower.age#phrase.navigation = {age} of {this}
+Borrower.age#phrase.subtraction_setter = subtract {age} from the age of {this}
+Borrower.citizen#phrase.action[0] = {this} gets citizen only if {citizen}
+Borrower.citizen#phrase.action[1] = make it {citizen} that {this} is citizen
+Borrower.citizen#phrase.action[1].deprecated = true
+Borrower.citizen#phrase.navigation = {this} is citizen
+Borrower.citizen#phrase.negative_predicate = {this} is not citizen
+Borrower.citizen#phrase.negative_predicate_setter = {this} does not get citizen
+Borrower.citizen#phrase.positive_predicate_setter = {this} gets citizen
+Borrower.clear_accounts()#phrase.action = clear the accounts of {this}
+Borrower.creditHistory#phrase.action = set the creditHistory of {this} to {creditHistory}
+Borrower.creditHistory#phrase.addition_setter = add {creditHistory} to the creditHistory of {this}
+Borrower.creditHistory#phrase.navigation = {creditHistory} of {this}
+Borrower.creditHistory#phrase.subtraction_setter = subtract {creditHistory} from the creditHistory of {this}
+Borrower.dependents#phrase.action = set the dependents of {this} to {dependents}
+Borrower.dependents#phrase.addition_setter = add {dependents} to the dependents of {this}
+Borrower.dependents#phrase.navigation = {dependents} of {this}
+Borrower.dependents#phrase.subtraction_setter = subtract {dependents} from the dependents of {this}
+Borrower.housing#phrase.action = set the housing of {this} to {housing}
+Borrower.housing#phrase.navigation = {housing} of {this}
+Borrower.jobRole#phrase.action = set the job role of {this} to {job role}
+Borrower.jobRole#phrase.navigation = {job role} of {this}
+Borrower.jobType#phrase.action = set the job type of {this} to {job type}
+Borrower.jobType#phrase.navigation = {job type} of {this}
+Borrower.propertyOwnership#phrase.action = set the property ownership of {this} to {property ownership}
+Borrower.propertyOwnership#phrase.navigation = {property ownership} of {this}
+Borrower.removeFrom_accounts(Account)#phrase.action = remove {0} from the accounts of {this}
+Borrower.totalAmountAcrossLinesOfCredit#phrase.action = set the total amount across lines of credit of {this} to {total amount across lines of credit}
+Borrower.totalAmountAcrossLinesOfCredit#phrase.addition_setter = add {total amount across lines of credit} to the total amount across lines of credit of {this}
+Borrower.totalAmountAcrossLinesOfCredit#phrase.navigation = {total amount across lines of credit} of {this}
+Borrower.totalAmountAcrossLinesOfCredit#phrase.subtraction_setter = subtract {total amount across lines of credit} from the total amount across lines of credit of {this}
+Borrower.yearsAtCurrentAddress#phrase.action = set the years at current address of {this} to {years at current address}
+Borrower.yearsAtCurrentAddress#phrase.addition_setter = add {years at current address} to the years at current address of {this}
+Borrower.yearsAtCurrentAddress#phrase.navigation = {years at current address} of {this}
+Borrower.yearsAtCurrentAddress#phrase.subtraction_setter = subtract {years at current address} from the years at current address of {this}
+Borrower.yearsEmployed#phrase.action = set the years employed of {this} to {years employed}
+Borrower.yearsEmployed#phrase.addition_setter = add {years employed} to the years employed of {this}
+Borrower.yearsEmployed#phrase.navigation = {years employed} of {this}
+Borrower.yearsEmployed#phrase.subtraction_setter = subtract {years employed} from the years employed of {this}
+Borrower.yearsWithCurrentBank#phrase.action = set the years with current bank of {this} to {years with current bank}
+Borrower.yearsWithCurrentBank#phrase.addition_setter = add {years with current bank} to the years with current bank of {this}
+Borrower.yearsWithCurrentBank#phrase.navigation = {years with current bank} of {this}
+Borrower.yearsWithCurrentBank#phrase.subtraction_setter = subtract {years with current bank} from the years with current bank of {this}
+
+# LoanApplication
+LoanApplication#concept.label = loan application
+LoanApplication.LTV#phrase.action = set the LTV of {this} to {LTV}
+LoanApplication.LTV#phrase.addition_setter = add {LTV} to the LTV of {this}
+LoanApplication.LTV#phrase.navigation = {LTV} of {this}
+LoanApplication.LTV#phrase.subtraction_setter = subtract {LTV} from the LTV of {this}
+LoanApplication.LoanApplication(double,Borrower,double,double,double,java.lang.String,Borrower,double)#phrase.navigation = a new {loan application} where {0, LTV} {1, co-borrower} {2, duration} {3, installment percent} {4, loan amount} {5, loan purpose} {6, primary borrower} {7, property value}
+LoanApplication.co$borrower#phrase.action = set the co-borrower of {this} to {co-borrower}
+LoanApplication.co$borrower#phrase.clearer = clear the co-borrower of {this}
+LoanApplication.co$borrower#phrase.navigation = {co-borrower} of {this}
+LoanApplication.duration#phrase.action = set the duration of {this} to {duration}
+LoanApplication.duration#phrase.addition_setter = add {duration} to the duration of {this}
+LoanApplication.duration#phrase.navigation = {duration} of {this}
+LoanApplication.duration#phrase.subtraction_setter = subtract {duration} from the duration of {this}
+LoanApplication.installmentPercent#phrase.action = set the installment percent of {this} to {installment percent}
+LoanApplication.installmentPercent#phrase.addition_setter = add {installment percent} to the installment percent of {this}
+LoanApplication.installmentPercent#phrase.navigation = {installment percent} of {this}
+LoanApplication.installmentPercent#phrase.subtraction_setter = subtract {installment percent} from the installment percent of {this}
+LoanApplication.loanAmount#phrase.action = set the loan amount of {this} to {loan amount}
+LoanApplication.loanAmount#phrase.addition_setter = add {loan amount} to the loan amount of {this}
+LoanApplication.loanAmount#phrase.navigation = {loan amount} of {this}
+LoanApplication.loanAmount#phrase.subtraction_setter = subtract {loan amount} from the loan amount of {this}
+LoanApplication.loanPurpose#phrase.action = set the loan purpose of {this} to {loan purpose}
+LoanApplication.loanPurpose#phrase.navigation = {loan purpose} of {this}
+LoanApplication.primaryBorrower#phrase.action = set the primary borrower of {this} to {primary borrower}
+LoanApplication.primaryBorrower#phrase.clearer = clear the primary borrower of {this}
+LoanApplication.primaryBorrower#phrase.navigation = {primary borrower} of {this}
+LoanApplication.propertyValue#phrase.action = set the property value of {this} to {property value}
+LoanApplication.propertyValue#phrase.addition_setter = add {property value} to the property value of {this}
+LoanApplication.propertyValue#phrase.navigation = {property value} of {this}
+LoanApplication.propertyValue#phrase.subtraction_setter = subtract {property value} from the property value of {this}
+
+# Risk
+Risk#concept.label = Risk
+Risk.Risk(RiskLevel,RiskLevel,RiskLevel)#phrase.navigation = a new {Risk} where {0, combined value} {1, loan amount risk} {2, relationship risk component}
+Risk.combinedValue#phrase.action = set the combined value of {this} to {combined value}
+Risk.combinedValue#phrase.clearer = clear the combined value of {this}
+Risk.combinedValue#phrase.navigation = {combined value} of {this}
+Risk.loanAmountRisk#phrase.action = set the loan amount risk of {this} to {loan amount risk}
+Risk.loanAmountRisk#phrase.clearer = clear the loan amount risk of {this}
+Risk.loanAmountRisk#phrase.navigation = {loan amount risk} of {this}
+Risk.relationshipRiskComponent#phrase.action = set the relationship risk component of {this} to {relationship risk component}
+Risk.relationshipRiskComponent#phrase.clearer = clear the relationship risk component of {this}
+Risk.relationshipRiskComponent#phrase.navigation = {relationship risk component} of {this}
+
+# RiskLevel
+RiskLevel#concept.documentation = 
+RiskLevel#concept.label = Risk Level
+RiskLevel.high#instance.label = high
+RiskLevel.low#instance.label = low
+RiskLevel.medium#instance.label = medium
